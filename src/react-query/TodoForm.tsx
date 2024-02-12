@@ -9,7 +9,9 @@ const TodoForm = () => {
 
   return (
     <>
-      {addTodo.error && <div className="alert alert-danger">{addTodo.error.message}</div>}
+      {addTodo.error && (
+        <div className="alert alert-danger">{addTodo.error.message}</div>
+      )}
       <form
         className="row mb-3"
         onSubmit={(event) => {

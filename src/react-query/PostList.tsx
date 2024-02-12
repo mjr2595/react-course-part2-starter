@@ -3,7 +3,8 @@ import React from "react";
 
 const PostList = () => {
   const pageSize = 10;
-  const { data, error, isLoading, fetchNextPage, isFetchingNextPage } = usePosts({ pageSize });
+  const { data, error, isLoading, fetchNextPage, isFetchingNextPage } =
+    usePosts({ pageSize });
 
   if (isLoading) return <p>Loading...</p>;
 

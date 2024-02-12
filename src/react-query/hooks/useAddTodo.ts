@@ -18,8 +18,12 @@ const useAddTodo = (onAdd: () => void) => {
       //   queryKey: CACHE_KEY_TODOS,
       // });
       // Approach 2: Updating the data in the cache
-      const previousTodos = queryClient.getQueryData<Todo[]>(CACHE_KEY_TODOS) || [];
-      queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, (todos = []) => [newTodo, ...todos]);
+      const previousTodos =
+        queryClient.getQueryData<Todo[]>(CACHE_KEY_TODOS) || [];
+      queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, (todos = []) => [
+        newTodo,
+        ...todos,
+      ]);
 
       onAdd();
 
