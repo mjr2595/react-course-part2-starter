@@ -1,9 +1,10 @@
-import { useContext, useReducer, useState } from "react";
-import tasksReducer from "./reducers/tasksReducer";
+import { useContext } from "react";
 import TasksContext from "./contexts/tasksContext";
+import AuthContext from "./contexts/authContext";
 
 const TaskList = () => {
   const { tasks, dispatch } = useContext(TasksContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <>
@@ -25,6 +26,7 @@ const TaskList = () => {
             className="list-group-item d-flex justify-content-between align-items-center"
           >
             <span className="flex-grow-1">{task.title}</span>
+            <span className="p-2">{user}</span>
             <button
               className="btn btn-outline-danger"
               onClick={() => dispatch({ type: "DELETE", taskId: task.id })}
